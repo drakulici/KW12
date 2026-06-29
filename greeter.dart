@@ -1,29 +1,7 @@
 import "dart:io";
-
-/* void main() {
-  
-  stdout.write("Please enter your first name:");
-  String firstName = stdin.readLineSync()!;
- 
-  stdout.write("Please enter your last name:");
-  String lastName = stdin.readLineSync()!;
-
-  stdout.write("Please enter your gender (male, female, diverse):");
-  String gender = stdin.readLineSync()!;
-  
-  stdout.write("How old are you? Please entere your age:");
-  int age = int.tryParse(stdin.readLineSync()!);
-
-  print("$firstName, $lastName, $gender, $age");
-
-
-  
-
-} */
- 
 void main() {
 
-  String? firstName;
+  String? firstName; 
 
   while (firstName == null || firstName.trim().isEmpty) { 
     stdout.write("Please enter your first name:");
@@ -73,8 +51,8 @@ void main() {
     print("Hello $firstName!");
   } else {
     DateTime now = DateTime.now();
-    // int hour = now.hour;
-    int hour = 12; 
+    int hour = now.hour;
+    // int hour = 12; //line for testing temporal if  
 
     if (hour < 10) {
       if (gender == "male") {
@@ -82,7 +60,7 @@ void main() {
       } else if (gender == "female") {
       print("Guten Morgen Frau $lastName!");
       } else if (gender == "other") {
-      print("Guten Morgen $firstName $lastName");
+      print("Guten Morgen $firstName $lastName!");
       }       
     } else if (hour > 10 && hour < 18) {
       if (gender == "male") {
@@ -90,7 +68,7 @@ void main() {
       } else if (gender == "female") {
       print("Guten Tag Frau $lastName!");
       } else if (gender == "other") {
-      print("Guten Tag $firstName $lastName");
+      print("Guten Tag $firstName $lastName!");
       }
     } else {
       if (gender == "male") {
@@ -98,7 +76,7 @@ void main() {
       } else if (gender == "female") {
       print("Guten Abend Frau $lastName!");
       } else if (gender == "other") {
-      print("Guten Abend $firstName $lastName");
+      print("Guten Abend $firstName $lastName!");
       }
     }
   } 
