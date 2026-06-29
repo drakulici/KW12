@@ -36,7 +36,7 @@ void main() {
     print("WINER! Two sixes in a row! It took $throwCount throws");
     print("Your rolls are : $rolls");
   } else { 
-    print("Limit reached! $rolls rolls.");
+    print("Limit reached! $throwCount rolls.");
     print("All rolls: $rolls");
   } 
 }
