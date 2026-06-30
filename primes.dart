@@ -51,7 +51,8 @@ void main() { // MODULO %
   for (int i = 2; i <= max; i++) { 
     bool isPrime = true; // start with assumption the number is prime ( true ) and then disprove it by using modulo 
       /* logic here is that prime has only 2 dividers 1 and itself  
-      example i = 9 -> dividers 1, 9 and algo finds imediately 3, so it breaks the loop... 
+        - example i = 9 -> dividers 1, 9 and algo finds imediately 3, so it breaks the loop... 
+        - example i = 17, 2 < 17, so it checks up to 17, 3,4,5,6,7,8,9,10,11,12,13,14,15,16 and it breaks the loop
         */
     for ( int j = 2; j < i; j++) {
       if (i % j == 0) { 
