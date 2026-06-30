@@ -8,6 +8,15 @@ String decompress(String input) { // start a decompress program that returns str
 
   while (i < input.length) { // as long we are not at the last position of the input continue 
     String character = input[i]; // character holds the i-th value from the input  || aaabb , if i is 0 it will be a 
+
+    if (!RegExp(r"[a-zA-Z]").hasMatch(character)) { //check if i is a letter, if true call error 
+      print(
+        "Invalid character at position $i: '$character'."
+        "Expect a letter, but found a digit. "
+      );
+      break;
+    }
+
     i++; // itterate one up
 
     String numberText = ""; // create a place holder for out numbers from the string 
@@ -37,13 +46,13 @@ void main(List<String> arguments) { // Program start || arguments is value from 
   String input; 
 
   if (arguments.isNotEmpty) {
-    input = arguments[0]; // check if arguments hold anything? if it does, run it as input 
-  }else {
+    input = arguments.join(); // check if arguments hold anything? if it does, run it as input 
+  } else {
     stdout.write("Enter a string: "); // otherwise promt a user to give us a string 
     input = stdin.readLineSync() ?? "";
   }
 
-  if ( !RegExp(r"^[a-zA-Z 0-9]*$").hasMatch(input)) { // if not only lower and upper letters and space are found, show an error || https://api.flutter.dev/flutter/dart-core/RegExp-class.html|| https://api.flutter.dev/flutter/dart-core/RegExp/hasMatch.html
+  if ( !RegExp(r"^[a-zA-Z0-9]*$").hasMatch(input)) { // if not only lower and upper letters and space are found, show an error || https://api.flutter.dev/flutter/dart-core/RegExp-class.html|| https://api.flutter.dev/flutter/dart-core/RegExp/hasMatch.html
     /* ^ start of the text
     $ end of the text 
     [a-zA-Z] * <- zero or more of these in the array 
@@ -55,3 +64,5 @@ void main(List<String> arguments) { // Program start || arguments is value from 
   String decompressed= decompress(input); // run compresed with the input 
   print(decompressed);
 }
+
+// TODO fix integer problem, 15 writes 11111

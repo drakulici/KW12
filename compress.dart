@@ -45,7 +45,7 @@ void main(List<String> arguments) { // Program start || arguments is value from 
   String input; 
 
   if (arguments.isNotEmpty) {
-    input = arguments[0]; // check if arguments hold anything? if it does, run it as input 
+    input = arguments.join(); // check if arguments hold anything? if it does, run it as input 
   }else {
     stdout.write("Enter a string: "); // otherwise promt a user to give us a string 
     input = stdin.readLineSync() ?? "";
@@ -64,3 +64,6 @@ void main(List<String> arguments) { // Program start || arguments is value from 
   String compressed = compress(input); // run compresed with the input 
   print(compressed);
 }
+
+// TODO search for why from terminal arguments doesent take multiple values 
+// because it had input = arguments[0] instead of taking everything and joining it 
